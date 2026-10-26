@@ -38,8 +38,14 @@ jobs:
             esac
           done
 
+
       - name: Upload Markdown files to S3
         env:
           S3_BUCKET: ${{ secrets.S3_BUCKET }}
         run: |
-          aws s3 sync docs-export "s3://${S3_BUCKET}" --only-show-errors
+          aws s3 sync docs-export "s3://${S3_BUCKET}/source-docs/" \
+            --delete \
+            --only-show-errors
+
+
+            
