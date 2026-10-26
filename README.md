@@ -63,3 +63,22 @@ While SvasthaAI is a robust platform, deploying it to cloud environments like **
 
 ---
 *Disclaimer: SvasthaAI is an AI-powered tool for informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult a physician for health concerns.*
+
+
+## 📚 LLM-Wiki Integration
+
+SvasthaAI documentation can be processed by an LLM-Wiki system to make project knowledge easier to search and understand.
+
+### How It Works
+
+- **Documentation Ingestion:** Markdown files (`.md`) are collected from the project repository and stored in AWS S3.
+- **Change Detection:** A manifest containing SHA-256 hashes tracks source documents and helps identify changes.
+- **Wiki Generation:** When source documentation changes, the updater can use an LLM to generate or refresh related wiki pages.
+- **Cloud Storage:** Generated wiki pages, the wiki index, and the manifest are stored separately from the original source documents.
+- **Knowledge Retrieval:** The generated wiki can serve as a knowledge source for answering questions about SvasthaAI.
+
+### Objective
+
+The goal is to maintain an up-to-date, searchable knowledge base for SvasthaAI while avoiding unnecessary LLM calls when the source documentation has not changed.
+
+*Note: The LLM-Wiki integration is a separate documentation workflow and does not itself provide medical diagnosis or treatment recommendations.*
