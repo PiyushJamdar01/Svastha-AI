@@ -82,3 +82,16 @@ SvasthaAI documentation can be processed by an LLM-Wiki system to make project k
 The goal is to maintain an up-to-date, searchable knowledge base for SvasthaAI while avoiding unnecessary LLM calls when the source documentation has not changed.
 
 *Note: The LLM-Wiki integration is a separate documentation workflow and does not itself provide medical diagnosis or treatment recommendations.*
+
+## LLM-Wiki Integration Test
+
+This project uses an automated documentation pipeline to keep its technical knowledge base up to date.
+
+- **Source:** Markdown files stored in the GitHub repository.
+- **Synchronization:** GitHub Actions transfers Markdown files to Amazon S3.
+- **Storage:** Original documents are stored under the `source-docs/` prefix.
+- **Wiki generation:** An LLM analyzes the source documents and generates structured wiki pages.
+- **Incremental updates:** The wiki updater compares SHA-256 hashes to identify modified documents and regenerate affected pages.
+- **Manifest:** A JSON file records the hashes of source documents used in the latest wiki build.
+
+The goal is to update relevant documentation when source files change while avoiding unnecessary LLM calls when no changes are detected.
