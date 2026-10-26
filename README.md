@@ -74,7 +74,7 @@ SvasthaAI documentation can be processed by an LLM-Wiki system to make project k
 - **Documentation Ingestion:** Markdown files (`.md`) are collected from the project repository and stored in AWS S3.
 - **Change Detection:** A manifest containing SHA-256 hashes tracks source documents and helps identify changes.
 - **Wiki Generation:** When source documentation changes, the updater can use an LLM to generate or refresh related wiki pages.
-- **Cloud Storage:** Generated wiki pages, the wiki index, and the manifest are stored separately from the original source documents.
+- **Cloud Storage:** Generated wiki pages, the wiki index, and the manifest are stored separately from the original source documents or Paper.
 - **Knowledge Retrieval:** The generated wiki can serve as a knowledge source for answering questions about SvasthaAI.
 
 ### Objective
